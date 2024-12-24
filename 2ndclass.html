@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
+    <!-- 2nd day lecture -->
+</head>
+
+<body>
+    <nav class="Navbar">
+        <div class="Navbar-menu">
+            <a href="#Home" class="Navbar-item">Home</a>
+            <a href="#About" class="Navbar-item">About</a>
+            <a href="#Services" class="Navbar-item">Services</a>
+            <a href="#Contact" class="Navbar-item">Contact</a>
+            <a href="" class="Navbar-item"><span class="material-symbols-outlined">
+                search
+                </span></a>
+        </div>
+    </nav>
+    <section id="Home" class="section">
+        <h1>Home</h1>
+    </section>
+    <section id="About" class="section">
+        <h1>About</h1>
+    </section>
+    <section id="Services" class="section">
+        <h1>Services</h1>
+    </section>
+    <section id="Contact" class="section">
+        <h1>Contact</h1>
+    </section>
+    <script>
+        document.querySelectorAll('.Navbar-item').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); 
+                const targetId = this.getAttribute('href').substring(1); 
+                const targetElement = document.getElementById(targetId); 
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop, 
+                    behavior: 'smooth' 
+                });
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
